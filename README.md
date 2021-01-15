@@ -25,4 +25,4 @@ V2 will be a visual replica of the pokedex created using CSS. The search box wil
 
 RESTful Pokemon API <https://pokeapi.co/>
 
-GET requests will be made the to API. 
+GET requests will be made the to API. # Pokedex
