@@ -19,7 +19,15 @@ function App() {
   return (
     <>
       <h1>Pokemon!</h1>
-
+      <ul>
+        {pokemonData.map(pokemon => (
+          <p
+            key={pokemon.name}
+          >
+            {pokemon.name}
+          </p>
+        ))}
+      </ul>
     </>
   );
 }
