@@ -41,7 +41,10 @@ function App() {
       <SearchPokemon
         getPokemon={getPokemon}
       />
-
+      {/* Check to see if a pokemon has been searched for */}
+      {
+        isEmpty(Pokemon) ? null : <PokemonCard Pokemon={Pokemon} />
+      }
     </>
   );
 }
