@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchPokemon from './Components/Search/SearchPokemon';
+import PokemonCard from './Components/PokemonCard/PokemonCard';
 
 function App() {
   // List of Pokemon - initially empty arr
@@ -8,6 +9,10 @@ function App() {
   // Single Pokemon data - initial empty obj
   const [Pokemon, setPokemon] = useState({}); // can be either number or name(lowercase)
 
+  // Check if Pokemon object is empty
+  function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+  }
 
   // Get a searched for pokemon
   const getPokemon = (nameOrId) => {
@@ -36,7 +41,10 @@ function App() {
       <SearchPokemon
         getPokemon={getPokemon}
       />
-
+      {/* Check to see if a pokemon has been searched for */}
+      {
+        isEmpty(Pokemon) ? null : <PokemonCard Pokemon={Pokemon} />
+      }
     </>
   );
 }
