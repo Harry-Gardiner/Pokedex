@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SearchPokemon from './Components/Search/SearchPokemon';
 
 function App() {
-  // List of pokemon - initially empty arr
+  // List of Pokemon - initially empty arr
   const [pokemonData, setPokemonData] = useState([]);
-  const [pokemon, setPokemon] = useState("20"); // can be either number or name(lowercase)
+  // Single Pokemon data - initial empty obj
+  const [Pokemon, setPokemon] = useState({}); // can be either number or name(lowercase)
 
-  const getPokemon = () => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then(response => {
+
+  // Get a searched for pokemon
+  const getPokemon = (nameOrId) => {
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${nameOrId}`).then(response => {
+      setPokemon(response.data);
       console.log(response.data);
     });
   };
 
+  // Get list of pokemon
   const getPokemonList = () => {
     axios.get("https://pokeapi.co/api/v2/pokemon").then(response => {
       setPokemonData(response.data.results);
@@ -20,26 +26,17 @@ function App() {
 
   // Runs once on render
   useEffect(() => {
-    //Get list of pokemon
     getPokemonList()
-
-    // Get single pokemon
-    getPokemon();
   }, []);
 
 
   return (
     <>
       <h1>Pokemon!</h1>
-      <ul>
-        {pokemonData.map(pokemon => (
-          <p
-            key={pokemon.name}
-          >
-            {pokemon.name}
-          </p>
-        ))}
-      </ul>
+      <SearchPokemon
+        getPokemon={getPokemon}
+      />
+
     </>
   );
 }
