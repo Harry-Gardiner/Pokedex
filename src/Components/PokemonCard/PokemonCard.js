@@ -1,3 +1,5 @@
+import Type from '../PokemonType/Type';
+
 const PokemonCard = ({ Pokemon }) => { // Pokemon is an object of data
     console.log(Pokemon);
 
@@ -35,7 +37,9 @@ const PokemonCard = ({ Pokemon }) => { // Pokemon is an object of data
                         </tr>
                     </tbody>
                 </table>
-                {/* type will go here */}
+                <Type
+                    type={type}
+                />
             </div>
         </div>
     )
