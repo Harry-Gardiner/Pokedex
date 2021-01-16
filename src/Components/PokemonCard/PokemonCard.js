@@ -1,12 +1,8 @@
 import Type from '../PokemonType/Type';
+import { capitalize } from '../../functions/functions';
 
 const PokemonCard = ({ Pokemon }) => { // Pokemon is an object of data
-    console.log(Pokemon);
 
-    const capitalize = (s) => {
-        if (typeof s !== 'string') return ''
-        return s.charAt(0).toUpperCase() + s.slice(1)
-    };
     const name = capitalize(Pokemon.name);
     const height = Pokemon.height / 10;
     const type = capitalize(Pokemon.types[0].type.name);

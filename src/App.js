@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchPokemon from './Components/Search/SearchPokemon';
 import PokemonCard from './Components/PokemonCard/PokemonCard';
+import PokemonList from './Components/PokemonList/PokemonList';
 
 function App() {
   // List of Pokemon - initially empty arr
@@ -34,6 +35,7 @@ function App() {
     getPokemonList()
   }, []);
 
+  console.log(pokemonData);
 
   return (
     <>
@@ -45,6 +47,10 @@ function App() {
       {
         isEmpty(Pokemon) ? null : <PokemonCard Pokemon={Pokemon} />
       }
+      <PokemonList
+        data={pokemonData}
+        getPokemon={getPokemon}
+      />
     </>
   );
 }
