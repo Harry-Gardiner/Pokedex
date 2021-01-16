@@ -12,25 +12,30 @@ const PokemonCard = ({ Pokemon }) => { // Pokemon is an object of data
     const weight = (Pokemon.weight / 10).toFixed(0);
 
     return (
-        <div>
-            <img src={sprite} alt={`Sprite of ${name}`} />
+        <div className="card">
+            <img className="card-img" src={sprite} alt={`Sprite of ${name}`} />
             <div>
-                <p>Name:</p>
-                <p>{name}</p>
-                <p>Id:</p>
-                <p>{Pokemon.id}</p>
-            </div>
-            <div>
-                <p>Weight:</p>
-                <p>{weight}kg</p>
-            </div>
-            <div>
-                <p>Height:</p>
-                <p>{height}m</p>
-            </div>
-            <div>
-                <p>Type:</p>
-                <p>{type}</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Name:</th>
+                            <td>{name}</td>
+                        </tr>
+                        <tr>
+                            <th>Id:</th>
+                            <td>{Pokemon.id}</td>
+                        </tr>
+                        <tr>
+                            <th>Height</th>
+                            <td>{height}m</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td>{weight}kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {/* type will go here */}
             </div>
         </div>
     )

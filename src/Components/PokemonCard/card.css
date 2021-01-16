@@ -1,0 +1,32 @@
+.card {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 2rem;
+	background-color: lightslategray;
+}
+
+.card-img {
+	object-fit: contain;
+	width: 10rem;
+}
+
+.card table {
+	border-spacing: 0.5rem;
+}
+
+.card table tr {
+	text-align: left;
+	background-color: lightgray;
+}
+
+.card table th {
+	width: 4rem;
+	text-align: center;
+	padding: 0.2rem;
+}
+
+.card table td {
+	width: 8rem;
+	text-align: center;
+}
