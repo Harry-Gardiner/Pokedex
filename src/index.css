@@ -1,5 +1,6 @@
 /* imports */
 @import "./Components/PokemonCard/card.css";
+@import "./Components/PokemonType/type.css";
 
 :root {
 	--red: #ff0000;
