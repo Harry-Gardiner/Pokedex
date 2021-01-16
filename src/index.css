@@ -1,6 +1,13 @@
 /* imports */
 @import "./Components/PokemonCard/card.css";
 @import "./Components/PokemonType/type.css";
+@import "./Components/PokemonList/pokemonList.css";
+
+/* font */
+@font-face {
+	font-family: "GameBoy";
+	src: url("./assets/fonts/Early\ GameBoy.ttf");
+}
 
 :root {
 	--red: #ff0000;
@@ -17,4 +24,15 @@ body {
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+form {
+	text-align: center;
+	margin: 2rem 0;
+}
+
+h1,
+h2 {
+	text-align: center;
+	font-family: "GameBoy";
 }
