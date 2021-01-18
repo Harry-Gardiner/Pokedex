@@ -24,18 +24,20 @@ const PokemonList = ({ data }) => {
     return (
         <>
             <h2>Pokemon List</h2>
-            <button
-                onClick={gotoPrevPage}
-                disabled={listCount === 0 ? true : false}
-            >
-                Previous
-            </button>
-            <button
-                onClick={gotoNextPage}
-                disabled={listCount === 140 ? true : false}
-            >
-                Next
-            </button>
+            <div className="btnContainer">
+                <button
+                    onClick={gotoPrevPage}
+                    disabled={listCount === 0 ? true : false}
+                >
+                    Previous
+                </button>
+                <button
+                    onClick={gotoNextPage}
+                    disabled={listCount === 140 ? true : false}
+                >
+                    Next
+                </button>
+            </div>
             <div className="listContainer">
                 {PokemonList.map((pokemon, index) => (
                     <div
