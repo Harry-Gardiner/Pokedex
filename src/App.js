@@ -4,16 +4,20 @@ import SearchPokemon from './Components/Search/SearchPokemon';
 import PokemonCard from './Components/PokemonCard/PokemonCard';
 import PokemonList from './Components/PokemonList/PokemonList';
 
+
+
+
 function App() {
   // List of Pokemon - initially empty arr
   const [pokemonData, setPokemonData] = useState([]);
   // Single Pokemon data - initial empty obj
   const [Pokemon, setPokemon] = useState({}); // can be either number or name(lowercase)
-  // Loading state
+  // set Loading state
   const [Loading, setLoading] = useState(true);
 
+
   // Check if Pokemon object is empty
-  function isEmpty(obj) {
+  const isEmpty = (obj) => {
     return Object.keys(obj).length === 0;
   }
 
@@ -29,10 +33,10 @@ function App() {
 
   // Get list of pokemon
   const getPokemonList = () => {
-    axios.get("?limit=15&offset=0").then(response => {
+    axios.get("?limit=151").then(response => {
       setPokemonData(response.data.results);
-      setLoading(false);
-      console.log(response.data);
+      console.log(response.data.results);
+      setLoading(false)
     }, error => {   // error message
       alert("Unable to access database");
     });
@@ -45,6 +49,7 @@ function App() {
 
 
 
+  // Render
   return (
     <>
       <h1>Pokedex!</h1>
@@ -61,8 +66,10 @@ function App() {
         <PokemonList
           data={pokemonData}
           getPokemon={getPokemon}
+
         />
       }
+
     </>
   );
 }
