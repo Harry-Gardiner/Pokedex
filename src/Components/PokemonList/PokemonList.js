@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
-import { capitalize } from '../../functions/functions';
+import { capitalize, addId } from '../../functions/functions';
 
 const PokemonList = ({ data }) => {
+    // set state to increment pokemon displayed
     const [listCount, setListCount] = useState(0);
-
+    // pass data objedt (list of pokemon) through function to add an Id to each pokemon, later used to get specific pokemon sprite
+    addId(data);
+    // set empty array to capture list of pokemon to be displayed
     const PokemonList = [];
 
-    // Add +5 
+    // loop through list count and push pokemon to Pokemonlist to be displayed
     for (let i = listCount; i < listCount + (listCount === 140 ? 11 : 20); i += 1) {
         PokemonList.push(data[i]);
     };
 
+    // next list of pokemon
     const gotoNextPage = () => {
-        console.log("next");
-        setListCount(listCount + 20)
+        setListCount(listCount + 20);
     };
 
+    // previous list of pokemon
     const gotoPrevPage = () => {
-        console.log("prev");
-        setListCount(listCount - 20)
+        setListCount(listCount - 20);
     };
 
     return (
@@ -39,14 +42,14 @@ const PokemonList = ({ data }) => {
                 </button>
             </div>
             <div className="listContainer">
-                {PokemonList.map((pokemon, index) => (
+                {PokemonList.map((pokemon) => (
                     <div
                         key={pokemon.name}
                         className="list-card"
                     >
-                        <p className="topL">{index + 1}</p>
+                        <p className="topL">{pokemon.id}</p>
                         {/* list starts at 0, whereas images start at 1, therefore index + 1 = correct pokemon Image */}
-                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`} alt={`sprite of ${pokemon.name}`} />
+                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={`sprite of ${pokemon.name}`} />
                         <p>{capitalize(pokemon.name)}</p>
                     </div>
                 ))}

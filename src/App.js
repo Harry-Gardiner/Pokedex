@@ -4,9 +4,6 @@ import SearchPokemon from './Components/Search/SearchPokemon';
 import PokemonCard from './Components/PokemonCard/PokemonCard';
 import PokemonList from './Components/PokemonList/PokemonList';
 
-
-
-
 function App() {
   // List of Pokemon - initially empty arr
   const [pokemonData, setPokemonData] = useState([]);
