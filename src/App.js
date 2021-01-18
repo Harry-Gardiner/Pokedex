@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from './data/axios-config';
 import SearchPokemon from './Components/Search/SearchPokemon';
 import PokemonCard from './Components/PokemonCard/PokemonCard';
 import PokemonList from './Components/PokemonList/PokemonList';
@@ -17,7 +17,7 @@ function App() {
 
   // Get a searched for pokemon
   const getPokemon = (nameOrId) => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${nameOrId}`).then(response => {
+    axios.get(`${nameOrId}`).then(response => {
       setPokemon(response.data);
       console.log(response.data);
     });
@@ -25,7 +25,7 @@ function App() {
 
   // Get list of pokemon
   const getPokemonList = () => {
-    axios.get("https://pokeapi.co/api/v2/pokemon").then(response => {
+    axios.get().then(response => {
       setPokemonData(response.data.results);
     });
   };
