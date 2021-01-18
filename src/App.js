@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from './data/axios-config';
 import SearchPokemon from './Components/Search/SearchPokemon';
 import PokemonCard from './Components/PokemonCard/PokemonCard';
 import PokemonList from './Components/PokemonList/PokemonList';
@@ -9,6 +9,8 @@ function App() {
   const [pokemonData, setPokemonData] = useState([]);
   // Single Pokemon data - initial empty obj
   const [Pokemon, setPokemon] = useState({}); // can be either number or name(lowercase)
+  // Loading state
+  const [Loading, setLoading] = useState(true);
 
   // Check if Pokemon object is empty
   function isEmpty(obj) {
@@ -17,16 +19,22 @@ function App() {
 
   // Get a searched for pokemon
   const getPokemon = (nameOrId) => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${nameOrId}`).then(response => {
+    axios.get(`${nameOrId}`).then(response => {
       setPokemon(response.data);
-      console.log(response.data);
+    }, error => {   // error message
+      console.error(`Pokemon ${nameOrId} not found`);
+      alert(`Pokemon ${nameOrId} not found, check spelling`)
     });
   };
 
   // Get list of pokemon
   const getPokemonList = () => {
-    axios.get("https://pokeapi.co/api/v2/pokemon").then(response => {
+    axios.get("?limit=15&offset=0").then(response => {
       setPokemonData(response.data.results);
+      setLoading(false);
+      console.log(response.data);
+    }, error => {   // error message
+      alert("Unable to access database");
     });
   };
 
@@ -35,7 +43,7 @@ function App() {
     getPokemonList()
   }, []);
 
-  console.log(pokemonData);
+
 
   return (
     <>
@@ -47,10 +55,14 @@ function App() {
       {
         isEmpty(Pokemon) ? null : <PokemonCard Pokemon={Pokemon} />
       }
-      <PokemonList
-        data={pokemonData}
-        getPokemon={getPokemon}
-      />
+
+      {/* Check to see if list has loaded. If not return loading else return list of pokemon from API */}
+      { Loading ? <p>Loading....</p> :
+        <PokemonList
+          data={pokemonData}
+          getPokemon={getPokemon}
+        />
+      }
     </>
   );
 }
