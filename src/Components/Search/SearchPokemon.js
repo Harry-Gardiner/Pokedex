@@ -15,13 +15,16 @@ const SearchPokemon = ({ getPokemon }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label> Enter Pokemon Name or ID </label>
+        <form
+            onSubmit={handleSubmit}
+        >
+            <label className="large"> Enter Pokemon Name or ID </label>
+            <label className="small">(Id between 1 - 151)</label>
             <input
                 type="text"
                 onChange={handleChange}
                 value={value}
-                placeholder="Pikachu / 25"
+                placeholder="pikachu / 25"
             />
         </form>
     )
