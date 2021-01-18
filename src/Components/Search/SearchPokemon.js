@@ -5,6 +5,7 @@ const SearchPokemon = ({ getPokemon }) => {
 
     const handleChange = (e) => {
         setValue(e.currentTarget.value.toLowerCase());
+        // value needs to be lowercase to match API format
     };
 
     const handleSubmit = (e) => {
