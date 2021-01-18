@@ -2,6 +2,7 @@
 @import "./Components/PokemonCard/card.css";
 @import "./Components/PokemonType/type.css";
 @import "./Components/PokemonList/pokemonList.css";
+@import "./Components/Search/search.css";
 
 /* font */
 @font-face {
