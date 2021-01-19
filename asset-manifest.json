@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Pokedex/static/css/main.e5e05365.chunk.css",
+    "main.js": "/Pokedex/static/js/main.b0d19442.chunk.js",
+    "main.js.map": "/Pokedex/static/js/main.b0d19442.chunk.js.map",
+    "runtime-main.js": "/Pokedex/static/js/runtime-main.76c3b290.js",
+    "runtime-main.js.map": "/Pokedex/static/js/runtime-main.76c3b290.js.map",
+    "static/js/2.f6676aae.chunk.js": "/Pokedex/static/js/2.f6676aae.chunk.js",
+    "static/js/2.f6676aae.chunk.js.map": "/Pokedex/static/js/2.f6676aae.chunk.js.map",
+    "index.html": "/Pokedex/index.html",
+    "static/css/main.e5e05365.chunk.css.map": "/Pokedex/static/css/main.e5e05365.chunk.css.map",
+    "static/js/2.f6676aae.chunk.js.LICENSE.txt": "/Pokedex/static/js/2.f6676aae.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Pokedex/static/media/Early GameBoy.d9d11b3d.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76c3b290.js",
+    "static/js/2.f6676aae.chunk.js",
+    "static/css/main.e5e05365.chunk.css",
+    "static/js/main.b0d19442.chunk.js"
+  ]
+}
