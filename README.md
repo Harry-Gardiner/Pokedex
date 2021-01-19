@@ -1,5 +1,8 @@
 # Pokedex
 
+**Welcome to V1**
+
+
 ## Aim
 Build a replica of the pokedex, a digital encyclopedia created by Professor Oak as an invaluable tool to Trainers in the Pokémon world. It gives information about all Pokemon in the world that are contained in its database. 
 

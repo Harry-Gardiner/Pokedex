@@ -50,7 +50,7 @@ const PokemonList = ({ data }) => {
                         <p className="topL">{pokemon.id}</p>
                         {/* list starts at 0, whereas images start at 1, therefore index + 1 = correct pokemon Image */}
                         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt={`sprite of ${pokemon.name}`} />
-                        <p>{capitalize(pokemon.name)}</p>
+                        <p className="pokemon-name">{capitalize(pokemon.name)}</p>
                     </div>
                 ))}
             </div>

@@ -47,3 +47,11 @@
 .btnContainer button:disabled {
 	background-color: bisque;
 }
+
+.pokemon-name {
+	background-color: lightgray;
+	width: 80%;
+	margin: 1rem auto;
+	padding: 0.25rem;
+	border-radius: 8%;
+}
